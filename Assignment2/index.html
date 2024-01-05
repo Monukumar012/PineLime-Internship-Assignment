@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dynamic Template</title>
+</head>
+    <body>
+
+        <h1>Pine & Lime Internship Process - Assignment 2</h1>
+        <div class="container">
+            <div class="main">
+                <img src="./test-image.png" alt="Map" class="map">
+                <div class="info">
+                    <!-- Here are our populated data comes-->
+                </div>
+            </div>
+        
+            <form class="form">
+                <h2>Enter Location</h2>
+                <input type="text" id="title" required name="title" placeholder="Enter Title"/>
+                <input type="text" id="latitude" required name="latitude" placeholder="Enter Latitude"/>
+                <input type="text" id="longitude" required name="longitude"  placeholder="Enter Longitude"/>
+                <input type="text" id="description" required name="description" placeholder="Enter Description"/>
+                <input type="date" id="date" required name="date" />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- For Mustache -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.2/mustache.min.js"></script>
+        <script src="./script.js"></script>
+
+        <!-- Mustache Template -->
+        <script id="info-template" type="x-tmpl-mustache">
+            <div class="left">
+                <p class="dis">{{description}}</p>
+            </div>
+            <div class="right">
+                <p class="title">{{title}}</p>
+                <p class="latitude">{{latitude}} N/{{longitude}} E</p>
+                <p class="date">{{date}}</p>
+            </div>
+        </script>
+
+    </body>
+</html>
